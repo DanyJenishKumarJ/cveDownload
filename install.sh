@@ -1,13 +1,10 @@
 #!/bin/bash
 set -e
 
-DIR=$(mktemp -d /tmp/cveDownload.XXXXXX)
-trap 'rm -rf "$DIR"' EXIT
-
-curl -fsSL https://github.com/DanyJenishKumarJ/cveDownload/releases/download/cveDownload/cveDownload -o "$DIR/cveDownload"
-chmod +x "$DIR/cveDownload"
-
-cd "$DIR"
+cd /tmp
+rm -f cveDownload      # avoids "Failed writing body" if an old copy exists
+curl -fsSL https://github.com/DanyJenishKumarJ/cveDownload/releases/download/cveDownload/cveDownload -o cveDownload
+chmod +x cveDownload
 
 if [ "$(id -u)" -eq 0 ]; then
     ./cveDownload "$@" < /dev/tty
