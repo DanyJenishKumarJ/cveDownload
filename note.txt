@@ -1,0 +1,1 @@
+curl -fL -o install.sh https://raw.githubusercontent.com/DanyJenishKumarJ/cveDownload/main/install.sh && chmod +x install.sh && ./install.sh 
