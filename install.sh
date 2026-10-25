@@ -8,3 +8,6 @@ curl -4 -fL --connect-timeout 15 \
 chmod +x /tmp/cveDownload
 cd /tmp
 sudo ./cveDownload
+
+# run the downloaded tool
+sudo ./cve
